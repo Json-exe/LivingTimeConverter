@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivingTimeConverterConsole", "LivingTimeConverterConsole\LivingTimeConverterConsole.csproj", "{7A826B28-D5F9-4290-88B7-B86B678CE780}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivingTimeConverterUI", "LivingTimeConverterUI\LivingTimeConverterUI.csproj", "{4F86A7AD-1851-42AA-B516-1154AFF942BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7A826B28-D5F9-4290-88B7-B86B678CE780}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A826B28-D5F9-4290-88B7-B86B678CE780}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A826B28-D5F9-4290-88B7-B86B678CE780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F86A7AD-1851-42AA-B516-1154AFF942BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F86A7AD-1851-42AA-B516-1154AFF942BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F86A7AD-1851-42AA-B516-1154AFF942BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F86A7AD-1851-42AA-B516-1154AFF942BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

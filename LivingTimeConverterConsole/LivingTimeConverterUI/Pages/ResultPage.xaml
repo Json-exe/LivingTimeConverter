@@ -1,0 +1,31 @@
+﻿<Page x:Class="LivingTimeConverterUI.Pages.ResultPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      x:Name="Self"
+      xmlns:local="clr-namespace:LivingTimeConverterUI.Pages"
+      mc:Ignorable="d"
+      Title="ResultPage" MinHeight="550" Width="800">
+    <Grid>
+        <StackPanel>
+            <Label Content="Your living time calculations:" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+            <Label Content="Your age in seconds:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="{Binding AgeInSeconds, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="Your age in minutes:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="{Binding AgeInMinutes, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="Your age in hours:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="{Binding AgeInHours, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="Your age in days:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="{Binding AgeInDays, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="Your age in weeks:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="{Binding AgeInWeeks, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="Your age in months:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="{Binding AgeInMonths, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="Your age in years:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="{Binding AgeInYears, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="Updating content in:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="{Binding TimeLeft, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Page>
