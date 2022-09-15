@@ -7,7 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d97a2279-8131-46b2-a893-d603bd17f751" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LivingTimeConverterConsole/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LivingTimeConverterConsole/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterConsole/MenuHelperClass.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/LivingTimeConverterConsole/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterConsole/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +89,8 @@
       <updated>1663011798866</updated>
       <workItem from="1663011802222" duration="3285000" />
       <workItem from="1663256393096" duration="2755000" />
-      <workItem from="1663259245087" duration="879000" />
+      <workItem from="1663259245087" duration="1051000" />
+      <workItem from="1663262460560" duration="533000" />
     </task>
     <servers />
   </component>
@@ -106,33 +106,33 @@
       <expand>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 0% 204/204" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 0% 205/205" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 0% 204/204" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="LivingTimeConverterConsole 0% 63/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 0% 205/205" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="LivingTimeConverterConsole 0% 64/64" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 0% 204/204" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="LivingTimeConverterConsole 0% 63/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="(1.0.0.0, net6.0) 0% 63/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 0% 205/205" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="LivingTimeConverterConsole 0% 64/64" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="(1.0.0.0, net6.0) 0% 64/64" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 0% 204/204" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="LivingTimeConverterConsole 0% 63/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="(1.0.0.0, net6.0) 0% 63/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="LivingTimeConverterConsole 0% 63/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 0% 205/205" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="LivingTimeConverterConsole 0% 64/64" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="(1.0.0.0, net6.0) 0% 64/64" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="LivingTimeConverterConsole 0% 64/64" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 0% 204/204" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="LivingTimeConverterConsole 0% 63/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="(1.0.0.0, net6.0) 0% 63/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="LivingTimeConverterConsole 0% 63/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Program 0% 63/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 0% 205/205" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="LivingTimeConverterConsole 0% 64/64" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="(1.0.0.0, net6.0) 0% 64/64" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="LivingTimeConverterConsole 0% 64/64" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Program 0% 64/64" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
       </expand>
       <select />
