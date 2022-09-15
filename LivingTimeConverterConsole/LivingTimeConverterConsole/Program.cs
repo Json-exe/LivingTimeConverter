@@ -1,67 +1,63 @@
-﻿namespace LivingTimeConverterConsole
+﻿using System.Globalization;
+using System.Timers;
+using Timer = System.Timers.Timer;
+
+namespace LivingTimeConverterConsole
 {
     internal class Program
     {
+        private static Timer _sTimer = new Timer();
+        private static DateTime birthDate;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the LivingTimeConverter. This is a lightweight fun tool to convert youre whole living time in any format you wish. \n" +
-                "As an Example, you can convert youre living time into years, seconds, months, days and so on... \nSo lets get started!\nNow enter youre Birth-Date:");
+            Console.WriteLine(
+                "Welcome to the LivingTimeConverter. This is a lightweight fun tool to convert youre whole living time in any format you wish. \n" +
+                "As an Example, you can convert youre living time into years, seconds, months, days and so on... \nSo lets get started!");
             EnterBirthDate:
+            Console.WriteLine("Please enter your birthdate:");
             string birthDateInput = Console.ReadLine() ?? "";
-            if (string.IsNullOrWhiteSpace(birthDateInput) || !DateTime.TryParse(birthDateInput, out DateTime birthDate))
+            var dateFormats = new[] { "dd.MM.yyyy", "dd-MM-yyyy", "dd/MM/yyyy", "dd MM yyyy", "ddMMyyyy" };
+            if (!DateTime.TryParseExact(birthDateInput, dateFormats, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None, out birthDate))
             {
-                Console.WriteLine("Invalid Date Format. Please try again.");
+                Console.WriteLine(
+                    "Invalid Date Format. Please try again and use one of these formats: dd.MM.yyyy, dd-MM-yyyy, dd/MM/yyyy, dd MM yyyy, ddMMyyyy");
                 goto EnterBirthDate;
             }
-            else
+
+            _sTimer.Interval = 5000;
+            _sTimer.AutoReset = true;
+            _sTimer.Elapsed += TimerElapsed;
+            TimerElapsed(null, null);
+            _sTimer.Start();
+            while (Console.ReadKey(true).Key != ConsoleKey.Escape)
             {
-                Console.Clear();
-                Console.WriteLine($"Alright youre BirthDate is now: {birthDate} Now select one of the Converting options: ");
-                Thread.Sleep(1500);
-                Menu:
-                int selectedClass = MenuHelperClass.MultipleChoice(true, "To Seconds", "To Minutes", "To Hours", "To Days", "To Months", "To Years");
-                if (selectedClass == 0)
-                {
-                    Console.WriteLine(ToSeconds(birthDate));
-                    Console.ReadKey();
-                    goto Menu;
-                }
-                else if (selectedClass == 1)
-                {
-                    Console.WriteLine(ToMinutes(birthDate));
-                    Console.ReadKey();
-                    goto Menu;
-                }
-                else if (selectedClass == 2)
-                {
-                    Console.WriteLine(ToHours(birthDate));
-                    Console.ReadKey();
-                    goto Menu;
-                }
-                else if (selectedClass == 3)
-                {
-                    Console.WriteLine(ToDays(birthDate));
-                    Console.ReadKey();
-                    goto Menu;
-                }
-                else if (selectedClass == 4)
-                {
-                    Console.WriteLine(ToMonths(birthDate));
-                    Console.ReadKey();
-                    goto Menu;
-                }
-                else if (selectedClass == 5)
-                {
-                    Console.WriteLine(ToYears(birthDate));
-                    Console.ReadKey();
-                    goto Menu;
-                }
+                
             }
+            _sTimer.Stop();
+            Console.Clear();
+            goto EnterBirthDate;
         }
-        
+
+        private static void TimerElapsed(object? sender, ElapsedEventArgs e)
+        {
+            Console.Clear();
+            Console.WriteLine($"You have set this as your Birthdate: {birthDate.ToString("dd-MM-yyyy")}. \n");
+            Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalSeconds} seconds.");
+            Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalMinutes} minutes.");
+            Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalHours} hours.");
+            Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalDays} days.");
+            Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalDays / 7} weeks.");
+            Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalDays / 30} months.");
+            Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalDays / 365} years.");
+            Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalDays / 365 / 100} centuries.");
+            Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalDays / 365 / 1000} millenia. \n");
+            Console.WriteLine("Refreshing every 5 seconds. Or press Escape to enter another Birthdate.");
+        }
+
         private static string ToSeconds(DateTime dateTime)
         {
-            // Get the seconds betweend the given date and the current date.
+            // Get the seconds between the given date and the current date.
             TimeSpan differenceInSeconds = DateTime.Now - dateTime;
             return differenceInSeconds.TotalSeconds.ToString();
         }
@@ -82,6 +78,12 @@
         {
             TimeSpan differnece = DateTime.Now - dateTime;
             return differnece.TotalDays.ToString();
+        }
+
+        private static string ToWeeks(DateTime dateTime)
+        {
+            TimeSpan difference = DateTime.Now - dateTime;
+            return (difference.TotalDays / 7).ToString();
         }
 
         private static string ToMonths(DateTime dateTime)
