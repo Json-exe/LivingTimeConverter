@@ -14,25 +14,22 @@ namespace LivingTimeConverterUI.Pages
 
         private void ProceedButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(BirthdayBox.Text))
+            var dateFormats = new[] { "dd.MM.yyyy", "dd-MM-yyyy", "dd/MM/yyyy", "dd MM yyyy", "ddMMyyyy" };
+            if (DateTime.TryParseExact(BirthdayBox.Text, dateFormats, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None,
+                    out DateTime birthday))
             {
-                MessageBox.Show("Please enter your birthday");
-            }
-            else if (DateTime.TryParse(BirthdayBox.Text, out DateTime birthday))
-            {
+                // Check if the birthday is in the future
                 if (birthday > DateTime.Now)
                 {
-                    MessageBox.Show("Please enter a valid birthday");
+                    MessageBox.Show("Your birthday cannot be in the future!", "Error", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    return;
                 }
-                else
-                {
-                    NavigationService?.Navigate(new ResultPage(birthday));
-                }
+                NavigationService?.Navigate(new ResultPage(birthday));
             }
             else
             {
-                MessageBox.Show("Please enter a valid birthday");
-                return;
+                MessageBox.Show("Invalid Date Format. Please try again and use one of these formats: dd.MM.yyyy, dd-MM-yyyy, dd/MM/yyyy, dd MM yyyy, ddMMyyyy");
             }
         }
     }

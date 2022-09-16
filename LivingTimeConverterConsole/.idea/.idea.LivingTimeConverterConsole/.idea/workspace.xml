@@ -7,7 +7,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d97a2279-8131-46b2-a893-d603bd17f751" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LivingTimeConverterConsole/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LivingTimeConverterConsole/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LivingTimeConverterConsole/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterConsole/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/LivingTimeConverterUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/LivingTimeConverterUI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/SetupPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/SetupPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/SetupPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/SetupPage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +96,9 @@
       <workItem from="1663011802222" duration="3285000" />
       <workItem from="1663256393096" duration="2755000" />
       <workItem from="1663259245087" duration="1051000" />
-      <workItem from="1663262460560" duration="533000" />
+      <workItem from="1663262460560" duration="808000" />
+      <workItem from="1663342244459" duration="2105000" />
+      <workItem from="1663344419714" duration="121000" />
     </task>
     <servers />
   </component>
