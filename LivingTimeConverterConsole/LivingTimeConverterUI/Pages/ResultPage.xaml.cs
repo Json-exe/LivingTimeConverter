@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
@@ -10,86 +12,52 @@ namespace LivingTimeConverterUI.Pages
         
         DispatcherTimer timer = new DispatcherTimer();
 
+        public static readonly DependencyProperty ConverterListProperty = DependencyProperty.Register(
+            nameof(ConverterList), typeof(ObservableCollection<ConverterList>), typeof(ResultPage), new PropertyMetadata(default(ObservableCollection<ConverterList>)));
 
-        public static readonly DependencyProperty AgeInSecondsProperty = DependencyProperty.Register(
-            nameof(AgeInSeconds), typeof(string), typeof(ResultPage), new PropertyMetadata(default(string)));
-
-        public string AgeInSeconds
+        public ObservableCollection<ConverterList> ConverterList
         {
-            get { return (string)GetValue(AgeInSecondsProperty); }
-            set { SetValue(AgeInSecondsProperty, value); }
-        }
-
-        public static readonly DependencyProperty AgeInMinutesProperty = DependencyProperty.Register(
-            nameof(AgeInMinutes), typeof(string), typeof(ResultPage), new PropertyMetadata(default(string)));
-
-        public string AgeInMinutes
-        {
-            get { return (string)GetValue(AgeInMinutesProperty); }
-            set { SetValue(AgeInMinutesProperty, value); }
-        }
-
-        public static readonly DependencyProperty AgeInHoursProperty = DependencyProperty.Register(
-            nameof(AgeInHours), typeof(string), typeof(ResultPage), new PropertyMetadata(default(string)));
-
-        public string AgeInHours
-        {
-            get { return (string)GetValue(AgeInHoursProperty); }
-            set { SetValue(AgeInHoursProperty, value); }
-        }
-
-        public static readonly DependencyProperty AgeInDaysProperty = DependencyProperty.Register(
-            nameof(AgeInDays), typeof(string), typeof(ResultPage), new PropertyMetadata(default(string)));
-
-        public string AgeInDays
-        {
-            get { return (string)GetValue(AgeInDaysProperty); }
-            set { SetValue(AgeInDaysProperty, value); }
-        }
-
-        public static readonly DependencyProperty AgeInWeeksProperty = DependencyProperty.Register(
-            nameof(AgeInWeeks), typeof(string), typeof(ResultPage), new PropertyMetadata(default(string)));
-
-        public string AgeInWeeks
-        {
-            get { return (string)GetValue(AgeInWeeksProperty); }
-            set { SetValue(AgeInWeeksProperty, value); }
-        }
-
-        public static readonly DependencyProperty AgeInMonthsProperty = DependencyProperty.Register(
-            nameof(AgeInMonths), typeof(string), typeof(ResultPage), new PropertyMetadata(default(string)));
-
-        public string AgeInMonths
-        {
-            get { return (string)GetValue(AgeInMonthsProperty); }
-            set { SetValue(AgeInMonthsProperty, value); }
-        }
-
-        public static readonly DependencyProperty AgeInYearsProperty = DependencyProperty.Register(
-            nameof(AgeInYears), typeof(string), typeof(ResultPage), new PropertyMetadata(default(string)));
-
-        public string AgeInYears
-        {
-            get { return (string)GetValue(AgeInYearsProperty); }
-            set { SetValue(AgeInYearsProperty, value); }
-        }
-
-        public static readonly DependencyProperty TimeLeftProperty = DependencyProperty.Register(
-            nameof(TimeLeft), typeof(int), typeof(ResultPage), new PropertyMetadata(2));
-
-        public int TimeLeft
-        {
-            get { return (int)GetValue(TimeLeftProperty); }
-            set { SetValue(TimeLeftProperty, value); }
+            get { return (ObservableCollection<ConverterList>)GetValue(ConverterListProperty); }
+            set { SetValue(ConverterListProperty, value); }
         }
         
         private int _timeLeft = 5;
-        private DateTime _birthDate;
+        private readonly DateTime _birthDate;
         
         public ResultPage(DateTime validBirthday)
         {
             InitializeComponent();
             _birthDate = validBirthday;
+            Init();
+        }
+
+        private void Init()
+        {
+            // ReSharper disable once InvalidXmlDocComment
+            /// Converter Ids:
+            /// 1: ToSeconds
+            /// 2: ToMinutes
+            /// 3: ToHours
+            /// 4: ToDays
+            /// 5: ToWeeks
+            /// 6: ToMonths
+            /// 7: ToYears
+            /// 8: ToDecades
+            /// 9: ToCenturies
+            /// 10: ToMillenniums
+
+            ConverterList = new ObservableCollection<ConverterList>();
+            ConverterList.Add(new ConverterList{ ConverterId = 1, Name = "Seconds", Value = DateTime.Now.Subtract(_birthDate).TotalSeconds.ToString()});
+            ConverterList.Add(new ConverterList{ ConverterId = 2, Name = "Minutes", Value = DateTime.Now.Subtract(_birthDate).TotalMinutes.ToString()});
+            ConverterList.Add(new ConverterList{ ConverterId = 3, Name = "Hours", Value = DateTime.Now.Subtract(_birthDate).TotalHours.ToString()});
+            ConverterList.Add(new ConverterList{ ConverterId = 4, Name = "Days", Value = DateTime.Now.Subtract(_birthDate).TotalDays.ToString()});
+            ConverterList.Add(new ConverterList{ ConverterId = 5, Name = "Weeks", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 7).ToString()});
+            ConverterList.Add(new ConverterList{ ConverterId = 6, Name = "Months", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 30).ToString()});
+            ConverterList.Add(new ConverterList{ ConverterId = 7, Name = "Years", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 365).ToString()});
+            ConverterList.Add(new ConverterList{ ConverterId = 8, Name = "Decades", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 3650).ToString()});
+            ConverterList.Add(new ConverterList{ ConverterId = 9, Name = "Centuries", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 36500).ToString()});
+            ConverterList.Add(new ConverterList{ ConverterId = 10, Name = "Millenniums", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 365000).ToString()});
+
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += TimerOnTick;
             timer.Start();
@@ -100,66 +68,29 @@ namespace LivingTimeConverterUI.Pages
             _timeLeft--;
             if (_timeLeft == 0)
             {
-                _timeLeft = 5;
-                // ReConvert DateTime
-                AgeInSeconds = ToSeconds(_birthDate);
-                AgeInMinutes = ToMinutes(_birthDate);
-                AgeInHours = ToHours(_birthDate);
-                AgeInDays = ToDays(_birthDate);
-                AgeInWeeks = ToWeeks(_birthDate);
-                AgeInMonths = ToMonths(_birthDate);
-                AgeInYears = ToYears(_birthDate);
+                timer.Stop();
+                ConverterList.Clear();
+                ConverterList.Add(new ConverterList{ ConverterId = 1, Name = "Seconds", Value = DateTime.Now.Subtract(_birthDate).TotalSeconds.ToString()});
+                ConverterList.Add(new ConverterList{ ConverterId = 2, Name = "Minutes", Value = DateTime.Now.Subtract(_birthDate).TotalMinutes.ToString()});
+                ConverterList.Add(new ConverterList{ ConverterId = 3, Name = "Hours", Value = DateTime.Now.Subtract(_birthDate).TotalHours.ToString()});
+                ConverterList.Add(new ConverterList{ ConverterId = 4, Name = "Days", Value = DateTime.Now.Subtract(_birthDate).TotalDays.ToString()});
+                ConverterList.Add(new ConverterList{ ConverterId = 5, Name = "Weeks", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 7).ToString()});
+                ConverterList.Add(new ConverterList{ ConverterId = 6, Name = "Months", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 30).ToString()});
+                ConverterList.Add(new ConverterList{ ConverterId = 7, Name = "Years", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 365).ToString()});
+                ConverterList.Add(new ConverterList{ ConverterId = 8, Name = "Decades", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 3650).ToString()});
+                ConverterList.Add(new ConverterList{ ConverterId = 9, Name = "Centuries", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 36500).ToString()});
+                ConverterList.Add(new ConverterList{ ConverterId = 10, Name = "Millenniums", Value = (DateTime.Now.Subtract(_birthDate).TotalDays / 365000).ToString()});
+                // Update the UI
+                ConverterList = ConverterList;
+                timer.Start();
             }
-            else
-            {
-                TimeLeft = _timeLeft;
-            }
         }
-
-        // DateTime converter methods.
-        
-        private static string ToSeconds(DateTime dateTime)
-        {
-            // Get the seconds between the given date and the current date.
-            TimeSpan differenceInSeconds = DateTime.Now - dateTime;
-            return differenceInSeconds.TotalSeconds.ToString();
-        }
-
-        private static string ToMinutes(DateTime dateTime)
-        {
-            TimeSpan difference = DateTime.Now - dateTime;
-            return difference.TotalMinutes.ToString();
-        }
-
-        private static string ToHours(DateTime dateTime)
-        {
-            TimeSpan difference = DateTime.Now - dateTime;
-            return difference.TotalHours.ToString();
-        }
-
-        private static string ToDays(DateTime dateTime)
-        {
-            TimeSpan difference = DateTime.Now - dateTime;
-            return difference.TotalDays.ToString();
-        }
-        
-        private static string ToWeeks(DateTime dateTime)
-        {
-            TimeSpan difference = DateTime.Now - dateTime;
-            return (difference.TotalDays / 7).ToString();
-        }
-
-        private static string ToMonths(DateTime dateTime)
-        {
-            int months = (DateTime.Now.Year - dateTime.Year) * 12;
-            return months.ToString();
-        }
-
-        private static string ToYears(DateTime dateTime)
-        {
-            // Get years between two dates
-            int years = DateTime.Now.Year - dateTime.Year;
-            return years.ToString();
-        }
+    }
+    
+    public class ConverterList
+    {
+        public int ConverterId { get; set; }
+        public string Name { get; set; }
+        public string Value { get; set; }
     }
 }

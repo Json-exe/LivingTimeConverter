@@ -21,8 +21,7 @@ internal class Program
         var birthDateInput = Console.ReadLine() ?? "";
         // Checking if the entered Birthdate is valid and matches the format.
         var dateFormats = new[] { "dd.MM.yyyy", "dd-MM-yyyy", "dd/MM/yyyy", "dd MM yyyy", "ddMMyyyy" };
-        if (!DateTime.TryParseExact(birthDateInput, dateFormats, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None,
-                out birthDate))
+        if (!DateTime.TryParseExact(birthDateInput, dateFormats, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None, out birthDate))
         {
             Console.Clear();
             Console.WriteLine("Invalid Date Format. Please try again and use one of these formats: dd.MM.yyyy, dd-MM-yyyy, dd/MM/yyyy, dd MM yyyy, ddMMyyyy\n");

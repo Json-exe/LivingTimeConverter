@@ -7,25 +7,34 @@
       xmlns:local="clr-namespace:LivingTimeConverterUI.Pages"
       mc:Ignorable="d"
       Title="ResultPage" MinHeight="550" Width="800">
+    
     <Grid>
-        <StackPanel>
-            <Label Content="Your living time calculations:" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-            <Label Content="Your age in seconds:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="{Binding AgeInSeconds, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="Your age in minutes:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="{Binding AgeInMinutes, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="Your age in hours:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="{Binding AgeInHours, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="Your age in days:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="{Binding AgeInDays, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="Your age in weeks:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="{Binding AgeInWeeks, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="Your age in months:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="{Binding AgeInMonths, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="Your age in years:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="{Binding AgeInYears, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="Updating content in:" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-            <Label Content="{Binding TimeLeft, ElementName=Self}" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-        </StackPanel>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <ListView ItemsSource="{Binding ConverterList, ElementName=Self}">
+                <ListView.View>
+                    <GridView> 
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}">
+                            <GridViewColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Content="Converting in:" Foreground="#EEEEEE"></Label>
+                                </DataTemplate>
+                            </GridViewColumn.HeaderTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Value}">
+                            <GridViewColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Content="Value:" Foreground="#EEEEEE"></Label>
+                                </DataTemplate>
+                            </GridViewColumn.HeaderTemplate>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Label Content="{Binding Value}"></Label>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
     </Grid>
 </Page>
