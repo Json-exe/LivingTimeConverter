@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -35,21 +35,21 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="MaterialDesignColors, Version=2.0.8.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
-          <HintPath>..\packages\MaterialDesignColors.2.0.8-ci304\lib\net462\MaterialDesignColors.dll</HintPath>
+            <HintPath>..\packages\MaterialDesignColors.2.0.8-ci304\lib\net462\MaterialDesignColors.dll</HintPath>
         </Reference>
         <Reference Include="MaterialDesignThemes.Wpf, Version=4.7.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
-          <HintPath>..\packages\MaterialDesignThemes.4.7.0-ci304\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
+            <HintPath>..\packages\MaterialDesignThemes.4.7.0-ci304\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
         </Reference>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Xml" />
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
         <Reference Include="System.Xaml">
             <RequiredTargetFramework>4.0</RequiredTargetFramework>
         </Reference>
-        <Reference Include="WindowsBase" />
-        <Reference Include="PresentationCore" />
-        <Reference Include="PresentationFramework" />
+        <Reference Include="WindowsBase"/>
+        <Reference Include="PresentationCore"/>
+        <Reference Include="PresentationFramework"/>
     </ItemGroup>
     <ItemGroup>
         <ApplicationDefinition Include="App.xaml">
@@ -68,15 +68,15 @@
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Page Include="Pages\ResultPage.xaml" />
-        <Page Include="Pages\SetupPage.xaml" />
+        <Page Include="Pages\ResultPage.xaml"/>
+        <Page Include="Pages\SetupPage.xaml"/>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Pages\ResultPage.xaml.cs">
-          <DependentUpon>ResultPage.xaml</DependentUpon>
+            <DependentUpon>ResultPage.xaml</DependentUpon>
         </Compile>
         <Compile Include="Pages\SetupPage.xaml.cs">
-          <DependentUpon>SetupPage.xaml</DependentUpon>
+            <DependentUpon>SetupPage.xaml</DependentUpon>
         </Compile>
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
@@ -92,15 +92,15 @@
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-        <None Include="App.config" />
-        <None Include="packages.config" />
+        <None Include="App.config"/>
+        <None Include="packages.config"/>
     </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <Import Project="..\packages\MaterialDesignThemes.4.7.0-ci304\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.7.0-ci304\build\MaterialDesignThemes.targets')" />
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <Import Project="..\packages\MaterialDesignThemes.4.7.0-ci304\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.7.0-ci304\build\MaterialDesignThemes.targets')"/>
     <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-      <PropertyGroup>
-        <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
-      </PropertyGroup>
-      <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.7.0-ci304\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.7.0-ci304\build\MaterialDesignThemes.targets'))" />
+        <PropertyGroup>
+            <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+        </PropertyGroup>
+        <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.7.0-ci304\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.7.0-ci304\build\MaterialDesignThemes.targets'))"/>
     </Target>
 </Project>

@@ -21,12 +21,15 @@ internal class Program
         var birthDateInput = Console.ReadLine() ?? "";
         // Checking if the entered Birthdate is valid and matches the format.
         var dateFormats = new[] { "dd.MM.yyyy", "dd-MM-yyyy", "dd/MM/yyyy", "dd MM yyyy", "ddMMyyyy" };
-        if (!DateTime.TryParseExact(birthDateInput, dateFormats, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None, out birthDate))
+        if (!DateTime.TryParseExact(birthDateInput, dateFormats, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None,
+                out birthDate))
         {
             Console.Clear();
-            Console.WriteLine("Invalid Date Format. Please try again and use one of these formats: dd.MM.yyyy, dd-MM-yyyy, dd/MM/yyyy, dd MM yyyy, ddMMyyyy\n");
+            Console.WriteLine(
+                "Invalid Date Format. Please try again and use one of these formats: dd.MM.yyyy, dd-MM-yyyy, dd/MM/yyyy, dd MM yyyy, ddMMyyyy\n");
             goto EnterBirthDate;
         }
+
         // Check if the birthday is in the future
         if (birthDate > DateTime.Now)
         {
@@ -70,6 +73,7 @@ internal class Program
         Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalDays / 365} years.");
         Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalDays / 365 / 100} centuries.");
         Console.WriteLine($"You have lived {DateTime.Now.Subtract(birthDate).TotalDays / 365 / 1000} millenia. \n");
-        Console.WriteLine("Refreshing every 5 seconds. Press ENTER to enter another Birthdate or press ESCAPE to exit.");
+        Console.WriteLine(
+            "Refreshing every 5 seconds. Press ENTER to enter another Birthdate or press ESCAPE to exit.");
     }
 }

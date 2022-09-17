@@ -4,14 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      xmlns:local="clr-namespace:LivingTimeConverterUI.Pages"
       mc:Ignorable="d"
       Title="SetupPage" Height="450" Width="800">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel>
-            <Label Content="Enter your Birthday:" FontSize="20" FontWeight="Bold" Foreground="#EEEEEE" VerticalAlignment="Top"></Label>
-            <TextBox x:Name="BirthdayBox" materialDesign:HintAssist.Hint="Birthday" Foreground="#EEEEEE" FontSize="20" Margin="0,8,0,0"></TextBox>
-            <Button Content="Proceed" Click="ProceedButton_Click" FontSize="20" Margin="0,8,0,0" Background="#00ADB5" IsDefault="True" Foreground="#EEEEEE" BorderBrush="#00ADB5"></Button>
+            <Label Content="Enter your Birthday:" FontSize="20" FontWeight="Bold" Foreground="#EEEEEE"
+                   VerticalAlignment="Top" />
+            <TextBox x:Name="BirthdayBox" materialDesign:HintAssist.Hint="Birthday" Foreground="#EEEEEE" FontSize="20"
+                     Margin="0,8,0,0" materialDesign:TextFieldAssist.UnderlineBrush="#00ADB5" materialDesign:TextFieldAssist.HasClearButton="True" TextAlignment="Center"/>
+            <Button Content="Proceed" Click="ProceedButton_Click" FontSize="20" Margin="0,8,0,0" Background="#00ADB5"
+                    IsDefault="True" Foreground="#EEEEEE" BorderBrush="#00ADB5" />
         </StackPanel>
     </Grid>
 </Page>

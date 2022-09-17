@@ -3,38 +3,60 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       x:Name="Self"
-      xmlns:local="clr-namespace:LivingTimeConverterUI.Pages"
       mc:Ignorable="d"
-      Title="ResultPage" MinHeight="550" Width="800">
-    
+      Title="ResultPage" d:DesignHeight="500" d:DesignWidth="500">
+
     <Grid>
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ListView ItemsSource="{Binding ConverterList, ElementName=Self}">
-                <ListView.View>
-                    <GridView> 
-                        <GridViewColumn DisplayMemberBinding="{Binding Name}">
-                            <GridViewColumn.HeaderTemplate>
-                                <DataTemplate>
-                                    <Label Content="Converting in:" Foreground="#EEEEEE"></Label>
-                                </DataTemplate>
-                            </GridViewColumn.HeaderTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Value}">
-                            <GridViewColumn.HeaderTemplate>
-                                <DataTemplate>
-                                    <Label Content="Value:" Foreground="#EEEEEE"></Label>
-                                </DataTemplate>
-                            </GridViewColumn.HeaderTemplate>
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Label Content="{Binding Value}"></Label>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                    </GridView>
-                </ListView.View>
-            </ListView>
+            <ScrollViewer x:Name="ScrollViewer" CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <ToolBarTray Background="#393E46">
+                        <ToolBar Style="{StaticResource MaterialDesignToolBar}" Background="Transparent" ClipToBounds="False">
+                            <Label VerticalAlignment="Center" FontSize="20" Content="Results" Foreground="#EEEEEE"></Label>
+                            <Separator Background="#EEEEEE"></Separator>
+                            <Label Content="Refreshing in: " FontSize="20" VerticalAlignment="Center" Foreground="#EEEEEE"></Label>
+                            <Label Content="{Binding refreshTime, ElementName=Self}" FontSize="20" VerticalAlignment="Center" Foreground="#EEEEEE"></Label>
+                            <Separator Background="#EEEEEE"></Separator>
+                            <Button x:Name="BtnExit" Click="BtnExit_OnClick" Content="{materialDesign:PackIcon ExitToApp}" Foreground="#EEEEEE" ToolTip="Exit to SetupPage"></Button>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <ListView x:Name="ConverterListUi" SelectionChanged="ConvertList_SelectionChanged"
+                              Margin="0,15,0,0"
+                              ItemsSource="{Binding ConverterList, ElementName=Self}" Background="#393E46"
+                              materialDesign:ListBoxItemAssist.ShowSelection="False" PreviewMouseWheel="ConverterListUi_OnPreviewMouseWheel">
+                        <ListView.View>
+                            <GridView materialDesign:DataGridAssist.SelectedCellBorderBrush="Transparent">
+                                <GridViewColumn Width="200">
+                                    <GridViewColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <Label Content="Converting in:" Foreground="#EEEEEE" FontSize="20" />
+                                        </DataTemplate>
+                                    </GridViewColumn.HeaderTemplate>
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Name}" FontSize="20" Foreground="#EEEEEE" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Width="220">
+                                    <GridViewColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <Label Content="Value:" Foreground="#EEEEEE" FontSize="20" />
+                                        </DataTemplate>
+                                    </GridViewColumn.HeaderTemplate>
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Value}" Foreground="#EEEEEE" FontSize="20" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Page>
