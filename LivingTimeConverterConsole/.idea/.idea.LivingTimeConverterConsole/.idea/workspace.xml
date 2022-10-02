@@ -7,18 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d97a2279-8131-46b2-a893-d603bd17f751" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LivingTimeConverterConsole/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LivingTimeConverterConsole/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterConsole/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterConsole/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/App.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/App.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/LivingTimeConverterUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/LivingTimeConverterUI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/ResultPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/ResultPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/ResultPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/ResultPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/SetupPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/SetupPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/SetupPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/Pages/SetupPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/Properties/Resources.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/Properties/Resources.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivingTimeConverterUI/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/LivingTimeConverterUI/packages.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9119521f631d4f83ad60f8989352a4505fed88/41/f9b2511a/ItemCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fa2c94f341d64b1e8f34d227c118329613d790/59/4895f34c/DependencyObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LivingTimeConverterUI/Pages/ResultPage.xaml.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -40,15 +29,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "HotReloadSettingsPage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;HotReloadSettingsPage&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Project.LivingTimeConverterUI">
     <configuration name="LivingTimeConverterConsole" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/LivingTimeConverterConsole/bin/Debug/net6.0/LivingTimeConverterConsole.exe" />
@@ -106,7 +95,9 @@
       <workItem from="1663342244459" duration="2105000" />
       <workItem from="1663344419714" duration="121000" />
       <workItem from="1663346665891" duration="2956000" />
-      <workItem from="1663418715820" duration="4504000" />
+      <workItem from="1663418715820" duration="4643000" />
+      <workItem from="1663431094277" duration="343000" />
+      <workItem from="1663956305223" duration="2000" />
     </task>
     <servers />
   </component>
