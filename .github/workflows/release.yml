@@ -12,15 +12,17 @@ jobs:
       - name: Get and check Tag
         run: |
           echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME "
+          string="$GITHUB_REF_NAME"
+          echo $string
           if [[ $GITHUB_REF_NAME =~ .*"CLI".* ]]; then
             echo "plattform=CLI" >> $GITHUB_ENV
-            echo ${$GITHUB_REF_NAME:4}
+            echo ${string:4}
           elif [[ $GITHUB_REF_NAME =~ .*"BOTH".* ]]; then
             echo "plattform=BOTH" >> $GITHUB_ENV
-            echo ${$GITHUB_REF_NAME:5}
+            echo ${string:5}
           else
             echo "plattform=UI" >> $GITHUB_ENV
-            echo ${$GITHUB_REF_NAME:3}
+            echo ${string:3}
           fi
 
       - name: Build Console
