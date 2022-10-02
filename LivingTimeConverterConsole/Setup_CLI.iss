@@ -30,10 +30,10 @@ Name: "german"; MessagesFile: "compiler:Languages\German.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "{#SourcePath}\LivingTimeConverterConsole\LivingTimeConverterConsole\bin\Release\net6.0\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#SourcePath}\LivingTimeConverterConsole\LivingTimeConverterConsole\bin\Release\net6.0\LivingTimeConverterConsole.deps.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#SourcePath}\LivingTimeConverterConsole\LivingTimeConverterConsole\bin\Release\net6.0\LivingTimeConverterConsole.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#SourcePath}\LivingTimeConverterConsole\LivingTimeConverterConsole\bin\Release\net6.0\LivingTimeConverterConsole.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}LivingTimeConverterConsole\bin\Release\net6.0\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}LivingTimeConverterConsole\bin\Release\net6.0\LivingTimeConverterConsole.deps.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}LivingTimeConverterConsole\bin\Release\net6.0\LivingTimeConverterConsole.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}LivingTimeConverterConsole\bin\Release\net6.0\LivingTimeConverterConsole.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

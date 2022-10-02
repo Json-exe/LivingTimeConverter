@@ -30,11 +30,11 @@ Name: "german"; MessagesFile: "compiler:Languages\German.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "{#SourcePath}\LivingTimeConverterConsole\LivingTimeConverterUI\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#SourcePath}\LivingTimeConverterConsole\LivingTimeConverterUI\bin\Release\LivingTimeConverterUI.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#SourcePath}\LivingTimeConverterConsole\LivingTimeConverterUI\bin\Release\MaterialDesignColors.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#SourcePath}\LivingTimeConverterConsole\LivingTimeConverterUI\bin\Release\MaterialDesignThemes.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#SourcePath}\LivingTimeConverterConsole\LivingTimeConverterUI\bin\Release\MaterialDesignThemes.Wpf.xml"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}LivingTimeConverterUI\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}LivingTimeConverterUI\bin\Release\LivingTimeConverterUI.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}LivingTimeConverterUI\bin\Release\MaterialDesignColors.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}LivingTimeConverterUI\bin\Release\MaterialDesignThemes.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}LivingTimeConverterUI\bin\Release\MaterialDesignThemes.Wpf.xml"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
