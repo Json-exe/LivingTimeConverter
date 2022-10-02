@@ -19,9 +19,11 @@ jobs:
           elif [[ $GITHUB_REF_NAME =~ .*"BOTH".* ]]; then
             echo "plattform=BOTH" >> $GITHUB_ENV
             echo ${string:5}
-          else
+          elif [[ $GITHUB_REF_NAME =~ .*"UI".* ]]; then
             echo "plattform=UI" >> $GITHUB_ENV
             echo ${string:3}
+          else
+            exit 1
           fi
 
       - name: Build Console
@@ -29,7 +31,7 @@ jobs:
         run: |
           echo "Plattform is CLI - Running MSBuild to build console..."
           cd $GITHUB_WORKSPACE
-          echo ls
+          cd LivingTimeConverterConsole
           msbuild LivingTimeConverterConsole.sln -property:Configuration=Release
 
       - name: Checkout
