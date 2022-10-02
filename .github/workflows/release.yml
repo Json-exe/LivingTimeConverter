@@ -1,5 +1,5 @@
 name: release-program
-run-name: ${{ github.actor }} is releasing the program
+run-name: ${{ github.actor }} has executed the action
 on:
   push:
     tags: 
@@ -7,8 +7,6 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      version: ""
 
     steps:
       - name: Get and check Tag
@@ -16,11 +14,21 @@ jobs:
           echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME "
           if [[ $GITHUB_REF_NAME =~ .*"CLI".* ]]; then
             echo "plattform=CLI" >> $GITHUB_ENV
+            echo ${${{ GITHUB_REF_NAME }}:4}
+          elif [[ $GITHUB_REF_NAME =~ .*"BOTH".* ]]; then
+            echo "plattform=BOTH" >> $GITHUB_ENV
+            echo ${${{ GITHUB_REF_NAME }}:5}
           else
             echo "plattform=UI" >> $GITHUB_ENV
+            echo ${${{ GITHUB_REF_NAME }}:3}
           fi
 
       - name: Build Console
+        if: ${{ env.plattform == 'CLI' }}
         run: |
-          echo " ${{ env.plattform }} "
+          echo "Plattform is CLI - Running MSBuild to build console..."
+          cd LivinTimeConverterConsole
+          ls
+          msbuild LivingTimeConverterConsole.sln -property:Configuration=Release
+
 
