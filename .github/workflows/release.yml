@@ -38,7 +38,7 @@ jobs:
           echo "Plattform is CLI - Running MSBuild to build and restore console..."
           dotnet msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -r
           dotnet msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -property:Configuration=Release
-          cd LivingTimeConverterConsole/LivingTimeConverterConsole/
+          cd LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0
           ls
 
       - name: Create Release
