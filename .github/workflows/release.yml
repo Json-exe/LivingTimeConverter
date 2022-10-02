@@ -35,10 +35,11 @@ jobs:
       - name: Build Console
         if: ${{ env.plattform == 'CLI' }}
         run: |
-          ls
           echo "Plattform is CLI - Running MSBuild to build and restore console..."
           dotnet msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -r
           dotnet msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -property:Configuration=Release
+          cd LivingTimeConverterConsole/LivingTimeConverterConsole/
+          ls
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
