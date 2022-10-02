@@ -37,3 +37,15 @@ jobs:
           dotnet --list-sdks
           dotnet msbuild LivingTimeConverterConsole.csproj -r
           dotnet msbuild LivingTimeConverterConsole.csproj -property:Configuration=Release
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1.10.0
+        with:
+          draft: false
+          prerelease: false
+          name: ${{ env.github_version }}
+          tag: ${{ github.ref }}
+          artifacts: LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0/LivingTimeConverterConsole.exe,LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0/LivingTimeConverterConsole.dll
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
