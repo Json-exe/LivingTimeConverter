@@ -34,4 +34,5 @@ jobs:
         run: |
           echo "Plattform is CLI - Running MSBuild to build console..."
           cd LivingTimeConverterConsole
-          msbuild LivingTimeConverterConsole -property:Configuration=Release
+          dotnet --list-sdks
+          dotnet msbuild LivingTimeConverterConsole -property:Configuration=Release
