@@ -19,3 +19,4 @@ jobs:
           else
             echo "plattform=UI" >> $GITHUB_ENV
           fi
+          echo "${{ env.plattform }}"
