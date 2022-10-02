@@ -16,8 +16,8 @@ jobs:
         run: |
           echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME "
           if [[ $GITHUB_REF_NAME =~ [^\bCLI\b$] ]]; then
-            echo "CLI" >> $plattform
-            echo $plattform
+            echo "CLI" >> ${{ env.plattform }}
+            echo "$plattform"
           else
             echo "Plattform is UI"
           fi
