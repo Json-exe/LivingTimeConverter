@@ -7,7 +7,7 @@ This is a small tool that converts your time on earth in different times. Eg. Se
 ---
 
 # How to use?
-> First decide if you want to use the UI or if you want to use the CLI-Client. If you choose the UI than scroll to the "How to use (UI) Section". If you preffer usign the CLI-Client then proceed with this instructions.
+> First decide if you want to use the UI or if you want to use the CLI-Client. If you choose the UI than scroll to the "How to use (UI) Section". If you preffer usign the CLI-Client then proceed with this instructions. 
 
 ## Build from Source (CLI) 
 1. Enter the LivingTimeConverter Folder.
