@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout
@@ -32,12 +32,29 @@ jobs:
             exit 1
           fi
 
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.1
+
       - name: Build Console
         if: ${{ env.plattform == 'CLI' }}
         run: |
-          echo "Plattform is CLI - Running MSBuild to build and restore console..."
-          dotnet msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -r
-          dotnet msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -property:Configuration=Release
+          echo "Plattform is CLI - Running MSBuild to build and restore CLI..."
+          msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -r
+          msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -property:Configuration=Release
+
+      - name: Build UI
+        if: ${{ env.plattform == 'UI' }}
+        run: |
+          echo "Plattform is UI - Running MSBuild to build and restore UI..."
+          msbuild LivingTimeConverterConsole/LivingTimeConverterUI/LivingTimeConverterUI.csproj -r
+          msbuild LivingTimeConverterConsole/LivingTimeConverterUI/LivingTimeConverterUI.csproj -property:Configuration=Release
+
+      - name: Build BOTH"
+        if: ${{ env.plattform == 'UI' }}
+        run: |
+          echo "Building both Plattforms - Running MSBuild to build and restore..."
+          msbuild LivingTimeConverterConsole/LivingTimeConverterConsole.sln -r
+          msbuild LivingTimeConverterConsole/LivingTimeConverterConsole.sln -property:Configuration=Release
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
