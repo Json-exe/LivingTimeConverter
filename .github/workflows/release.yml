@@ -38,15 +38,13 @@ jobs:
           echo "Plattform is CLI - Running MSBuild to build and restore console..."
           dotnet msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -r
           dotnet msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -property:Configuration=Release
-          cd LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0
-          ls
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: "${{ env.github_version }}"
           generate_release_notes: true
-          files: LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0/LivingTimeConverterConsole.exe
+          files: LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0/LivingTimeConverterConsole
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
