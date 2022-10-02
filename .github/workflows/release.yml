@@ -31,8 +31,7 @@ jobs:
         run: |
           echo "Plattform is CLI - Running MSBuild to build console..."
           cd $GITHUB_WORKSPACE
-          cd LivingTimeConverterConsole
-          msbuild LivingTimeConverterConsole.sln -property:Configuration=Release
+          ls -R
 
       - name: Checkout
-        uses: actions/checkout@v3 
+        uses: actions/checkout@v3
