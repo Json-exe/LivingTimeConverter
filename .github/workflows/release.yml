@@ -33,7 +33,7 @@ jobs:
         if: ${{ env.plattform == 'CLI' }}
         run: |
           echo "Plattform is CLI - Running MSBuild to build console..."
-          cd LivingTimeConverterConsole
+          cd LivingTimeConverterConsole/LivingTimeConverterConsole
           dotnet --list-sdks
-          dotnet msbuild LivingTimeConverterConsole.sln -r
-          dotnet msbuild LivingTimeConverterConsole.sln -property:Configuration=Release
+          dotnet msbuild LivingTimeConverterConsole.csproj -r
+          dotnet msbuild LivingTimeConverterConsole.csproj -property:Configuration=Release
