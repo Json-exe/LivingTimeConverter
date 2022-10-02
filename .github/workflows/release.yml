@@ -28,7 +28,6 @@ jobs:
         if: ${{ env.plattform == 'CLI' }}
         run: |
           echo "Plattform is CLI - Running MSBuild to build console..."
-          cd LivingTimeConverterConsole
           ls
           msbuild LivingTimeConverterConsole.sln -property:Configuration=Release
 
