@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Get and check Tag
         run: |
@@ -33,21 +35,15 @@ jobs:
       - name: Build Console
         if: ${{ env.plattform == 'CLI' }}
         run: |
-          echo "Plattform is CLI - Running MSBuild to build console..."
-          cd LivingTimeConverterConsole/LivingTimeConverterConsole
-          dotnet --list-sdks
-          dotnet msbuild LivingTimeConverterConsole.csproj -r
-          dotnet msbuild LivingTimeConverterConsole.csproj -property:Configuration=Release
-
-      # - name: Upload Artifacts
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: CLI-Files
-      #     path: LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0/
+          echo "Plattform is CLI - Running MSBuild to build and restore console..."
+          dotnet msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -r
+          dotnet msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -property:Configuration=Release
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: "${{ env.github_version }}"
+          generate_release_notes: true
           files: LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0/LivingTimeConverterConsole.exe
         env:
           GITHUB_TOKEN: ${{ github.token }}
