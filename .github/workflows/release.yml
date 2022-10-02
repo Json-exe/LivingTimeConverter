@@ -58,7 +58,7 @@ jobs:
         if: ${{ env.plattform == 'BOTH' }}
         run: |
           echo "Building both Plattforms - Running MSBuild to build and restore..."
-          msbuild LivingTimeConverterConsole/LivingTimeConverterConsole.sln -restore
+          msbuild LivingTimeConverterConsole/LivingTimeConverterConsole.sln -restore -p:RestorePackagesConfig=true
           msbuild LivingTimeConverterConsole/LivingTimeConverterConsole.sln -property:Configuration=Release
           echo "Compiling to output with ISS..."
           iscc LivingTimeConverterConsole/Setup_UI.iss
