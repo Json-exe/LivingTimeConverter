@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "Plattform is CLI - Running MSBuild to build console..."
           cd $GITHUB_WORKSPACE
-          ls -R
+          ls
 
       - name: Checkout
         uses: actions/checkout@v3
