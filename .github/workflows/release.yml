@@ -39,6 +39,12 @@ jobs:
           dotnet msbuild LivingTimeConverterConsole.csproj -r
           dotnet msbuild LivingTimeConverterConsole.csproj -property:Configuration=Release
 
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: CLI-Files
+          path: LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0/
+
       - name: Create Release
         uses: ncipollo/release-action@v1.10.0
         with:
@@ -46,14 +52,9 @@ jobs:
           prerelease: false
           name: ${{ env.github_version }}
           tag: ${{ github.ref }}
+          artifacts: CLI-Files
         env:
           GITHUB_TOKEN: ${{ github.token }}
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: CLI-Files
-          path: LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0/
 
 
 
