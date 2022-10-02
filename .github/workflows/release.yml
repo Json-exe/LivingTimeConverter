@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Get and check Tag
         run: |
           echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME "
@@ -32,7 +35,4 @@ jobs:
           echo "Plattform is CLI - Running MSBuild to build console..."
           cd $GITHUB_WORKSPACE
           pwd
-          ls
-
-      - name: Checkout
-        uses: actions/checkout@v3
+          ls -la
