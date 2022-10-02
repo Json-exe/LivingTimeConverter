@@ -14,13 +14,13 @@ jobs:
           echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME "
           if [[ $GITHUB_REF_NAME =~ .*"CLI".* ]]; then
             echo "plattform=CLI" >> $GITHUB_ENV
-            echo ${${{ GITHUB_REF_NAME }}:4}
+            echo ${$GITHUB_REF_NAME:4}
           elif [[ $GITHUB_REF_NAME =~ .*"BOTH".* ]]; then
             echo "plattform=BOTH" >> $GITHUB_ENV
-            echo ${${{ GITHUB_REF_NAME }}:5}
+            echo ${$GITHUB_REF_NAME:5}
           else
             echo "plattform=UI" >> $GITHUB_ENV
-            echo ${${{ GITHUB_REF_NAME }}:3}
+            echo ${$GITHUB_REF_NAME:3}
           fi
 
       - name: Build Console
