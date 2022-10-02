@@ -55,7 +55,7 @@ jobs:
           iscc LivingTimeConverterConsole/Setup_UI.iss
 
       - name: Build|Prepare BOTH"
-        if: ${{ env.plattform == 'UI' }}
+        if: ${{ env.plattform == 'BOTH' }}
         run: |
           echo "Building both Plattforms - Running MSBuild to build and restore..."
           msbuild LivingTimeConverterConsole/LivingTimeConverterConsole.sln -r
