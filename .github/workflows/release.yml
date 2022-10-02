@@ -36,26 +36,33 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.1
 
-      - name: Build Console
+      - name: Build|Prepare CLI
         if: ${{ env.plattform == 'CLI' }}
         run: |
           echo "Plattform is CLI - Running MSBuild to build and restore CLI..."
           msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -r
           msbuild LivingTimeConverterConsole/LivingTimeConverterConsole/LivingTimeConverterConsole.csproj -property:Configuration=Release
+          echo "Compiling to output with ISS..."
+          iscc LivingTimeConverterConsole/Setup_CLI.iss
 
-      - name: Build UI
+      - name: Build|Prepare UI
         if: ${{ env.plattform == 'UI' }}
         run: |
           echo "Plattform is UI - Running MSBuild to build and restore UI..."
           msbuild LivingTimeConverterConsole/LivingTimeConverterUI/LivingTimeConverterUI.csproj -r
           msbuild LivingTimeConverterConsole/LivingTimeConverterUI/LivingTimeConverterUI.csproj -property:Configuration=Release
+          echo "Compiling to output with ISS..."
+          iscc LivingTimeConverterConsole/Setup_UI.iss
 
-      - name: Build BOTH"
+      - name: Build|Prepare BOTH"
         if: ${{ env.plattform == 'UI' }}
         run: |
           echo "Building both Plattforms - Running MSBuild to build and restore..."
           msbuild LivingTimeConverterConsole/LivingTimeConverterConsole.sln -r
           msbuild LivingTimeConverterConsole/LivingTimeConverterConsole.sln -property:Configuration=Release
+          echo "Compiling to output with ISS..."
+          iscc LivingTimeConverterConsole/Setup_UI.iss
+          iscc LivingTimeConverterConsole/Setup_CLI.iss
 
       - name: Create Release (Console)
         if: ${{ env.plattform == 'CLI' }}
@@ -63,7 +70,7 @@ jobs:
         with:
           tag_name: "${{ env.github_version }}"
           generate_release_notes: true
-          files: LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0/LivingTimeConverterConsole.exe
+          files: LivingTimeConverterConsole/output/LivingTimeConverterCLI.exe
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
@@ -73,7 +80,7 @@ jobs:
         with:
           tag_name: "${{ env.github_version }}"
           generate_release_notes: true
-          files: LivingTimeConverterConsole/LivingTimeConverterUI/bin/Release/LivingTimeConverterUI.exe
+          files: LivingTimeConverterConsole/output/LivingTimeConverterUI.exe
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
@@ -84,8 +91,8 @@ jobs:
           tag_name: "${{ env.github_version }}"
           generate_release_notes: true
           files: | 
-            LivingTimeConverterConsole/LivingTimeConverterUI/bin/Release/LivingTimeConverterUI.exe
-            LivingTimeConverterConsole/LivingTimeConverterConsole/bin/Release/net6.0/LivingTimeConverterConsole.exe
+            LivingTimeConverterConsole/output/LivingTimeConverterUI.exe
+            LivingTimeConverterConsole/output/LivingTimeConverterCLI.exe
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
