@@ -18,13 +18,13 @@ jobs:
           string="$GITHUB_REF_NAME"
           if [[ $GITHUB_REF_NAME =~ .*"CLI".* ]]; then
             echo "plattform=CLI" >> $GITHUB_ENV
-            echo "version=${string:4}" >> $GITHUB_ENV
+            echo "github_version=${string:4}" >> $GITHUB_ENV
           elif [[ $GITHUB_REF_NAME =~ .*"BOTH".* ]]; then
             echo "plattform=BOTH" >> $GITHUB_ENV
-            echo ${string:5}
+            echo "github_version=${string:5}" >> $GITHUB_ENV
           elif [[ $GITHUB_REF_NAME =~ .*"UI".* ]]; then
             echo "plattform=UI" >> $GITHUB_ENV
-            echo ${string:3}
+            echo "github_version=${string:3}" >> $GITHUB_ENV
           else
             exit 1
           fi
