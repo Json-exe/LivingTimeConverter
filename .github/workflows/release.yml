@@ -15,6 +15,9 @@ jobs:
       - name: Get and check Tag
         run: |
           echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME "
-          if [[ $GITHUB_REF_NAME == ^\bUI\b$]] then
-            echo "UI" >> $version
-            echo $version
+          if [ $GITHUB_REF_NAME == ^\bCLI\b$]; then
+            echo "CLI" >> $plattform
+            echo $plattform
+          else
+            echo "Plattform is UI"
+          fi
