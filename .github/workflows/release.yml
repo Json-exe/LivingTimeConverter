@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       version: ""
-      plattform: ""
 
     steps:
       - name: Get and check Tag
