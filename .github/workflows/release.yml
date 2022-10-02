@@ -13,10 +13,9 @@ jobs:
         run: |
           echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME "
           string="$GITHUB_REF_NAME"
-          echo $string
           if [[ $GITHUB_REF_NAME =~ .*"CLI".* ]]; then
             echo "plattform=CLI" >> $GITHUB_ENV
-            echo ${string:4}
+            echo "version=${string:4}" >> $GITHUB_ENV
           elif [[ $GITHUB_REF_NAME =~ .*"BOTH".* ]]; then
             echo "plattform=BOTH" >> $GITHUB_ENV
             echo ${string:5}
@@ -29,7 +28,7 @@ jobs:
         if: ${{ env.plattform == 'CLI' }}
         run: |
           echo "Plattform is CLI - Running MSBuild to build console..."
-          cd LivinTimeConverterConsole
+          cd LivingTimeConverterConsole
           ls
           msbuild LivingTimeConverterConsole.sln -property:Configuration=Release
 
