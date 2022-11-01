@@ -41,6 +41,13 @@ Source: "{#SourcePath}LivingTimeConverterUI\bin\Release\MaterialDesignThemes.Wpf
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
+[Registry]
+Root: HKCU; Subkey: "SOFTWARE\JDS"; Flags: uninsdeletekeyifempty
+Root: HKCU; Subkey: "SOFTWARE\JDS\{#MyAppName}"; Flags: uninsdeletekey; Permissions: users-full
+Root: HKCU; Subkey: "SOFTWARE\JDS\{#MyAppName}"; ValueType: string; ValueName: "InstallPath"; ValueData: "{app}"; Permissions: users-full
+Root: HKCU; Subkey: "SOFTWARE\JDS\{#MyAppName}"; ValueType: string; ValueName: "ExeName"; ValueData: "{#MyAppExeName}"; Permissions: users-full
+Root: HKCU; Subkey: "SOFTWARE\JDS\{#MyAppName}"; ValueType: string; ValueName: "UninstallPath"; ValueData: "{uninstallexe}"; Permissions: users-full
+
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
