@@ -4,6 +4,8 @@
 #define MyAppName "LivingTimeConverterUI"
 #define MyAppVersion "1.0.0.0"
 #define MyAppExeName "LivingTimeConverterUI.exe"
+#define public Dependency_NoExampleSetup
+#include "CodeDependencies.iss"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -21,6 +23,8 @@ OutputBaseFilename=LivingTimeConverterUI
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+UninstallDisplayName={#MyAppName}
+ArchitecturesInstallIn64BitMode=x64
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -35,6 +39,7 @@ Source: "{#SourcePath}LivingTimeConverterUI\bin\Release\LivingTimeConverterUI.ex
 Source: "{#SourcePath}LivingTimeConverterUI\bin\Release\MaterialDesignColors.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#SourcePath}LivingTimeConverterUI\bin\Release\MaterialDesignThemes.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#SourcePath}LivingTimeConverterUI\bin\Release\MaterialDesignThemes.Wpf.xml"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}SetupSRC\*"; Flags: dontcopy noencryption
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -51,3 +56,11 @@ Root: HKCU; Subkey: "SOFTWARE\JDS\{#MyAppName}"; ValueType: string; ValueName: "
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
+[Code]
+function InitializeSetup: Boolean;
+begin
+  // add the dependencies you need
+  Dependency_AddDotNet48;
+
+  Result := True;
+end;

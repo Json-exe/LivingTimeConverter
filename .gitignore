@@ -659,5 +659,7 @@ fabric.properties
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudio
-LivingTimeConverterConsole/.idea/.idea.LivingTimeConverterConsole/.idea/workspace.xml
-LivingTimeConverterConsole/.idea/.idea.LivingTimeConverterConsole/.idea/misc.xml
+output/*
+LivingTimeConverterConsole/output/LivingTimeConverterCLI.exe
+LivingTimeConverterConsole/output/LivingTimeConverterUI.exe
+LivingTimeConverterConsole/output/LivingTimeConverterUI.exe

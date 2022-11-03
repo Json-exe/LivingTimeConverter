@@ -5,7 +5,13 @@
     <projectFile>LivingTimeConverterUI/LivingTimeConverterUI.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d97a2279-8131-46b2-a893-d603bd17f751" name="Changes" comment="" />
+    <list default="true" id="d97a2279-8131-46b2-a893-d603bd17f751" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LivingTimeConverterConsole/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LivingTimeConverterConsole/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Setup_CLI.iss" beforeDir="false" afterPath="$PROJECT_DIR$/Setup_CLI.iss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Setup_UI.iss" beforeDir="false" afterPath="$PROJECT_DIR$/Setup_UI.iss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/LivingTimeConverterCLI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/output/LivingTimeConverterCLI.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/LivingTimeConverterUI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/output/LivingTimeConverterUI.exe" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,6 +103,7 @@
       <workItem from="1663431094277" duration="343000" />
       <workItem from="1663956305223" duration="2000" />
       <workItem from="1667341653820" duration="21000" />
+      <workItem from="1667421086128" duration="606000" />
     </task>
     <servers />
   </component>
