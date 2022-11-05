@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "LivingTimeConverterUI"
-#define MyAppVersion "1.0.0.0"
+#define MyAppVersion "1.0.0"
 #define MyAppExeName "LivingTimeConverterUI.exe"
 #define public Dependency_NoExampleSetup
 #include "CodeDependencies.iss"
@@ -52,6 +52,7 @@ Root: HKCU; Subkey: "SOFTWARE\JDS\{#MyAppName}"; Flags: uninsdeletekey; Permissi
 Root: HKCU; Subkey: "SOFTWARE\JDS\{#MyAppName}"; ValueType: string; ValueName: "InstallPath"; ValueData: "{app}"; Permissions: users-full
 Root: HKCU; Subkey: "SOFTWARE\JDS\{#MyAppName}"; ValueType: string; ValueName: "ExeName"; ValueData: "{#MyAppExeName}"; Permissions: users-full
 Root: HKCU; Subkey: "SOFTWARE\JDS\{#MyAppName}"; ValueType: string; ValueName: "UninstallPath"; ValueData: "{uninstallexe}"; Permissions: users-full
+Root: HKCU; Subkey: "SOFTWARE\JDS\{#MyAppName}"; ValueType: string; ValueName: "Version"; ValueData: "{#MyAppVersion}"; Permissions: users-full
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
