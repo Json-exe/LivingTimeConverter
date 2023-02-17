@@ -1,5 +1,5 @@
 # LivingTimeConverter
-This is a small tool that converts your time on earth in different times. Eg. Seconds, Months and so on. Available as UI and for CLI.
+This tool converts the time you currently live in the world, based on your date of birth, into different formats. Eg. Seconds, Months and so on. Available as UI and for CLI.
 
 ---
 # Status: Finished!
