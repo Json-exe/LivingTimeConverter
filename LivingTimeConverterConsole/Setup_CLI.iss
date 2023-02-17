@@ -39,7 +39,7 @@ Source: "{#SourcePath}LivingTimeConverterConsole\bin\Release\net6.0\{#MyAppExeNa
 Source: "{#SourcePath}LivingTimeConverterConsole\bin\Release\net6.0\LivingTimeConverterConsole.deps.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#SourcePath}LivingTimeConverterConsole\bin\Release\net6.0\LivingTimeConverterConsole.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#SourcePath}LivingTimeConverterConsole\bin\Release\net6.0\LivingTimeConverterConsole.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#SourcePath}SetupSRC\*"; Flags: dontcopy noencryption
+Source: "{#SourcePath}SetupSRC\*"; Flags: dontcopy noencryption deleteafterinstall
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
