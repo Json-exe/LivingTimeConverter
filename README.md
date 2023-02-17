@@ -2,8 +2,8 @@
 This is a small tool that converts your time on earth in different times. Eg. Seconds, Months and so on. Available as UI and for CLI.
 
 ---
-# Status: In Development! (Expect Bugs or unfinished Designs)
-## Contributors are welcome :)
+# Status: Finished!
+## Something missing? Just contribute to this repository or create a Issue ^^
 ---
 
 # How to use?
@@ -42,8 +42,4 @@ msbuild "<path to the csproj file>" -property:Configuration=Release
 I develope this project in my free time when im not working or having school. If you want to support me, or have some Ideas how to help me or improve my skills. Then just tell me :) And if you have some improvements or ideas for this project dont be shy and contribute with me. Thats all. An now, I hope you have a very nice day :) (Btw sry for my bad english, Im from Germany)
 
 ## Roadmap (Just for fun)
-- New Design for UI (MaterialDesign)
-- Some more Converting Options
-- Rework of CLI Client
-- Some small extra Features for UI
-- Install Read CLI and UI installer in Release TAB (Made with GitHub Actions)
+- Nothing here @ the moment
