@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="550" MinWidth="550" Background="#222831" Loaded="MainWindow_OnLoaded">
+        Title="LivingTimeConverter" MinHeight="550" MinWidth="550" Background="#222831" Loaded="MainWindow_OnLoaded">
     <Grid>
         <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Background="#222831" />
     </Grid>

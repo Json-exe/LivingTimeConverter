@@ -13,19 +13,25 @@
             <ScrollViewer x:Name="ScrollViewer" CanContentScroll="True" VerticalScrollBarVisibility="Auto">
                 <StackPanel>
                     <ToolBarTray Background="#393E46">
-                        <ToolBar Style="{StaticResource MaterialDesignToolBar}" Background="Transparent" ClipToBounds="False">
-                            <Label VerticalAlignment="Center" FontSize="20" Content="Results" Foreground="#EEEEEE"></Label>
-                            <Separator Background="#EEEEEE"></Separator>
-                            <Label Content="Refreshing in: " FontSize="20" VerticalAlignment="Center" Foreground="#EEEEEE"></Label>
-                            <Label Content="{Binding refreshTime, ElementName=Self}" FontSize="20" VerticalAlignment="Center" Foreground="#EEEEEE"></Label>
-                            <Separator Background="#EEEEEE"></Separator>
-                            <Button x:Name="BtnExit" Click="BtnExit_OnClick" Content="{materialDesign:PackIcon ExitToApp}" Foreground="#EEEEEE" ToolTip="Exit to SetupPage"></Button>
+                        <ToolBar Style="{StaticResource MaterialDesignToolBar}" Background="Transparent"
+                                 ClipToBounds="False">
+                            <Label VerticalAlignment="Center" FontSize="20" Content="Results" Foreground="#EEEEEE" />
+                            <Separator Background="#EEEEEE" />
+                            <Label Content="Refreshing in: " FontSize="20" VerticalAlignment="Center"
+                                   Foreground="#EEEEEE" />
+                            <Label Content="{Binding RefreshTime, ElementName=Self}" FontSize="20"
+                                   VerticalAlignment="Center" Foreground="#EEEEEE" />
+                            <Separator Background="#EEEEEE" />
+                            <Button x:Name="BtnExit" Click="BtnExit_OnClick"
+                                    Content="{materialDesign:PackIcon ExitToApp}" Foreground="#EEEEEE"
+                                    ToolTip="Exit to SetupPage" />
                         </ToolBar>
                     </ToolBarTray>
                     <ListView x:Name="ConverterListUi" SelectionChanged="ConvertList_SelectionChanged"
                               Margin="0,15,0,0"
                               ItemsSource="{Binding ConverterList, ElementName=Self}" Background="#393E46"
-                              materialDesign:ListBoxItemAssist.ShowSelection="False" PreviewMouseWheel="ConverterListUi_OnPreviewMouseWheel">
+                              materialDesign:ListBoxItemAssist.ShowSelection="False"
+                              PreviewMouseWheel="ConverterListUi_OnPreviewMouseWheel">
                         <ListView.View>
                             <GridView materialDesign:DataGridAssist.SelectedCellBorderBrush="Transparent">
                                 <GridViewColumn Width="200">

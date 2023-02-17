@@ -32,8 +32,7 @@ namespace LivingTimeConverterUI.Pages
             }
             else
             {
-                MessageBox.Show(
-                    "Invalid Date Format. Please try again and use one of these formats: dd.MM.yyyy, dd-MM-yyyy, dd/MM/yyyy, dd MM yyyy, ddMMyyyy");
+                MessageBox.Show("Invalid Date Format. Please try again and use one of these formats: dd.MM.yyyy, dd-MM-yyyy, dd/MM/yyyy, dd MM yyyy, ddMMyyyy");
             }
         }
     }
