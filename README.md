@@ -1,5 +1,5 @@
 # LivingTimeConverter
-This is a small tool that converts your time on earth in different times. Eg. Seconds, Months and so on. Available as UI and for CLI.
+This tool converts the time you currently live in the world, based on your date of birth, into different formats. Eg. Seconds, Months and so on. Available as UI and for CLI.
 
 ---
 # Status: Finished!
@@ -40,7 +40,7 @@ msbuild "<path to the csproj file>" -property:Configuration=Release
 
 ---
 # Information
-I develope this project in my free time when im not working or having school. If you want to support me, or have some Ideas how to help me or improve my skills. Then just tell me :) And if you have some improvements or ideas for this project dont be shy and contribute with me. Thats all. An now, I hope you have a very nice day :) (Btw sry for my bad english, Im from Germany)
+Currently I am still learning programming. But it makes me very much fun! If you still have ideas for smaller projects or so, I would be happy to hear about it. Also if you have ideas for this mini tool 😁
 
 ## Roadmap (Just for fun)
 - Nothing here @ the moment
