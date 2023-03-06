@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "LivingTimeConverterUI"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.0.0.0"
 #define MyAppExeName "LivingTimeConverterUI.exe"
 #define public Dependency_NoExampleSetup
 #include "CodeDependencies.iss"
